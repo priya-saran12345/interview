@@ -25,7 +25,7 @@ const Header = () => {
         duration: 0.7,
         ease: "easeOut",
       }}
-      className="sticky top-0 z-50 w-full border-b border-lightBlue bg-white/90 shadow-sm backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-lightBlue  shadow-sm backdrop-blur-md"
     >
       <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link

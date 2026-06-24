@@ -5,7 +5,7 @@
   --foreground: #171717;
   --blue:#1677FF;
   --darkBlue: #0B5ED7;
-
+--lightGrey:#F5F5F5;
   --lightBlue: #EAF5FF;
 }
 
@@ -23,6 +23,8 @@
       --blue:#1677FF;
         --lightBlue: #EAF5FF;
   --darkBlue: #0B5ED7;
+  --lightGrey:#F5F5F5;
+
 
 
   }
@@ -31,6 +33,8 @@
 --color-blue:#1677FF;
   --color-lightBlue: #EAF5FF;
   --color-darkBlue: #0B5ED7;
+  --color-lightGrey:#F5F5F5;
+
 
 }
 
@@ -38,4 +42,28 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+.water-marble-text {
+  background:
+    radial-gradient(circle at 20% 30%, #ffffff 0%, transparent 22%),
+    radial-gradient(circle at 75% 20%, #7ecbff 0%, transparent 24%),
+    radial-gradient(circle at 50% 80%, #0b5ed7 0%, transparent 28%),
+    linear-gradient(120deg, #1677ff, #0b5ed7, #eaf5ff, #1677ff);
+  background-size: 220% 220%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: marbleMove 4s ease-in-out infinite;
+}
+
+@keyframes marbleMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

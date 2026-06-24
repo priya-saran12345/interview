@@ -18,7 +18,6 @@ const quickLinks = [
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];
-
 const Footer = () => {
   return (
     <footer className="mt-16 border-t border-lightBlue bg-lightBlue">
