@@ -1,9 +1,34 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const monkeyFrames = [
+  "/images/frame1.png",
+  "/images/frame2.png",
+  "/images/frame3.png",
+  "/images/frame4.png",
+  "/images/frame5.png",
+  "/images/frame6.png",
+];
+
 export default function Home() {
+  const [currentFrame, setCurrentFrame] = useState(0);
+
+  useEffect(() => {
+    monkeyFrames.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+
+    const interval = setInterval(() => {
+      setCurrentFrame((prev) => (prev + 1) % monkeyFrames.length);
+    }, 15000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <main className="min-h-[85vh] bg-lightGrey">
       <section className="mx-auto grid min-h-[85vh] max-w-7xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -95,26 +120,25 @@ export default function Home() {
           }}
           className="flex justify-center lg:justify-end"
         >
-          <motion.div
-            // animate={{
-            //   y: [0, -10, 0],
-            // }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="relative w-full max-w-[560px]"
-          >
-            <Image
-              src="/images/banner.png"
-              alt="Monkey climbing skill ranking stairs"
-              width={850}
-              height={1050}
-              priority
-              className="w-full object-contain"
-            />
-          </motion.div>
+          <div className="relative aspect-square w-full max-w-[560px] bg-transparent">
+            {monkeyFrames.map((frame, index) => (
+              <Image
+                key={frame}
+                src={frame}
+                alt={
+                  index === currentFrame
+                    ? "Monkey climbing skill ranking stairs"
+                    : ""
+                }
+                fill
+                priority={index === 0}
+                sizes="(max-width: 1024px) 100vw, 460px"
+                className={`object-contain mix-blend-multiply transition-opacity duration-100 ${
+                  index === currentFrame ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            ))}
+          </div>
         </motion.div>
       </section>
     </main>

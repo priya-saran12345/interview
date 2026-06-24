@@ -10,6 +10,8 @@ import {
   PhoneOutlined,
   EnvironmentOutlined,
 } from "@ant-design/icons";
+import   FooterIconPage from "./FooterIcon";
+ 
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -18,10 +20,30 @@ const quickLinks = [
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];
+
+const FooterLink = ({
+  href,
+  label,
+}: {
+  href: string;
+  label: string;
+}) => {
+  return (
+    <Link
+      href={href}
+      className="group relative w-fit overflow-hidden py-1 text-sm font-medium text-gray-700 no-underline transition hover:text-darkBlue"
+    >
+      {label}
+
+      <span className="absolute bottom-0 left-0 h-[2px] w-0 bg-darkBlue opacity-0 transition-all duration-500 ease-out group-hover:w-full group-hover:opacity-100" />
+    </Link>
+  );
+};
+
 const Footer = () => {
   return (
-    <footer className="mt-16 border-t border-lightBlue bg-lightBlue">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <footer className="border-t border-4 border-white bg-lightGrey">
+      <div className="mx-auto max-w-7xl px-4 bg-red py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link
@@ -32,12 +54,16 @@ const Footer = () => {
             </Link>
 
             <p className="mt-4 max-w-md text-sm leading-7 text-gray-700">
-              We create modern, responsive and user-friendly websites that help
-              your business grow online with confidence.
+              Practice interviews, improve confidence, rank
+              <br />
+               your skills and
+              climb your career
+              <br />
+               ladder step by step.
             </p>
 
             <div className="mt-5 flex gap-3">
-              {[FacebookOutlined, InstagramOutlined, LinkedinOutlined].map(
+              {/* {[FacebookOutlined, InstagramOutlined, LinkedinOutlined].map(
                 (Icon, index) => (
                   <a
                     key={index}
@@ -47,7 +73,8 @@ const Footer = () => {
                     <Icon />
                   </a>
                 )
-              )}
+              )} */}
+              <FooterIconPage/>
             </div>
           </div>
 
@@ -58,13 +85,11 @@ const Footer = () => {
 
             <div className="flex flex-col gap-3">
               {quickLinks.map((item) => (
-                <Link
+                <FooterLink
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium text-gray-700 no-underline transition hover:text-darkBlue"
-                >
-                  {item.label}
-                </Link>
+                  label={item.label}
+                />
               ))}
             </div>
           </div>
@@ -93,17 +118,14 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/70 pt-6 text-sm text-gray-600 md:flex-row">
+        <div className=" flex justify-center items-center justify-between gap-4 border-t border-white/70
+         pt-4 text-sm text-gray-600 md:flex-row pb-0">
           <p>© {new Date().getFullYear()} Surprise. All rights reserved.</p>
 
-          <div className="flex gap-5">
-            <Link href="/privacy-policy" className="text-gray-600 no-underline hover:text-darkBlue">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-gray-600 no-underline hover:text-darkBlue">
-              Terms
-            </Link>
-          </div>
+          {/* <div className="flex gap-5"> */}
+            {/* <FooterLink href="/privacy-policy" label="Privacy Policy" /> */}
+            {/* <FooterLink href="/terms" label="Terms" /> */}
+          {/* </div> */}
         </div>
       </div>
     </footer>
