@@ -4,6 +4,9 @@
   --background: #ffffff;
   --foreground: #171717;
   --blue:#1677FF;
+  --darkBlue: #0B5ED7;
+
+  --lightBlue: #EAF5FF;
 }
 
 @theme inline {
@@ -18,13 +21,16 @@
     --background: #0a0a0a;
     --foreground: #ededed;
       --blue:#1677FF;
+        --lightBlue: #EAF5FF;
+  --darkBlue: #0B5ED7;
+
 
   }
 }
 @theme {
 --color-blue:#1677FF;
-  --color-lightBlue: "#EAF5FF",
-  --color-darkBlue: "#0B5ED7",
+  --color-lightBlue: #EAF5FF;
+  --color-darkBlue: #0B5ED7;
 
 }
 
