@@ -12,7 +12,7 @@ const navItems = [
   { label: "Portfolio", href: "/portfolio" },
   { label: "Contact", href: "/contact" },
 ];
-
+  
 const Header = () => {
   const [open, setOpen] = useState(false);
 
