@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
 const monkeyFrames = [
   "/images/frame1.png",
   "/images/frame2.png",
@@ -12,7 +11,6 @@ const monkeyFrames = [
   "/images/frame5.png",
   "/images/frame6.png",
 ];
-
 export default function Banner() {
   const [currentFrame, setCurrentFrame] = useState(0);
 
