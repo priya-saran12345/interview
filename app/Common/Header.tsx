@@ -27,7 +27,7 @@ const Header = () => {
       }}
       className="sticky top-0 z-50 w-full border-b border-lightBlue  shadow-sm backdrop-blur-md"
     >
-      <div className="mx-auto flex h-[76px] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[76px] xl:max-w-[90%] items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="relative text-2xl font-extrabold tracking-tight text-darkBlue no-underline sm:text-3xl"

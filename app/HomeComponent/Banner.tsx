@@ -29,7 +29,7 @@ export default function Banner() {
 
   return (
     <main className="min-h-[85vh] bg-lightGrey">
-      <section className="mx-auto grid min-h-[85vh] max-w-7xl grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section className="mx-auto grid min-h-[85vh] xl:max-w-[90%] grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
         <motion.div
           initial={{ y: 45, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -47,7 +47,7 @@ export default function Banner() {
               delay: 0.65,
               ease: "easeOut",
             }}
-            className="mb-4 inline-block rounded-full text-sm font-semibold text-darkBlue"
+            className=" inline-block rounded-full text-sm font-semibold text-darkBlue"
           >
             Interview. Improve. Skills.....
           </motion.p>

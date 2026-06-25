@@ -8,7 +8,6 @@ import {
   CalendarOutlined,
   TrophyOutlined,
 } from "@ant-design/icons";
-
 const steps = [
   {
     no: "1",
@@ -39,7 +38,7 @@ const steps = [
 const ProcessSteps = () => {
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto xl:max-w-[90%]">
         <motion.div
           initial={{ y: 35, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -116,7 +115,8 @@ const ProcessSteps = () => {
                     delay: 0.25 + index * 0.12,
                     ease: "easeOut",
                   }}
-                  className="relative z-10 ml-auto flex h-14 w-14 items-center justify-center rounded-full bg-darkBlue text-2xl text-white shadow-md transition group-hover:bg-blue"
+                  className="relative z-10 ml-auto flex h-10 w-10 items-center justify-center rounded-full bg-darkBlue 
+                  text-2xl text-white shadow-md  transition group-hover:bg-blue"
                 >
                   <Icon />
                 </motion.div>

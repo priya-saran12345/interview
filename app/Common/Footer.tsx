@@ -43,7 +43,7 @@ const FooterLink = ({
 const Footer = () => {
   return (
     <footer className="border-t border-4 border-white bg-lightGrey">
-      <div className="mx-auto max-w-7xl px-4 bg-red py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto xl:max-w-[90%] px-4 bg-red py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <Link
