@@ -64,10 +64,10 @@ const ProcessSteps = () => {
             }}
             className="mx-auto mt-5 flex w-72 origin-center items-center justify-center"
           >
-            <span className="h-[2px] flex-1 bg-lightBlue" />
+            <span className="h-[2px] flex-1 bg-darkBlue" />
             <span className="mx-3 h-3 w-3 rounded-full bg-blue" />
             <span className="mx-3 h-3 w-3 rounded-full bg-blue" />
-            <span className="h-[2px] flex-1 bg-lightBlue" />
+            <span className="h-[2px] flex-1 bg-darkBlue" />
           </motion.div>
         </motion.div>
 

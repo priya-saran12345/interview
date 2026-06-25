@@ -59,13 +59,27 @@ const WhatWeDo = () => {
 
       <div className="relative z-10 mx-auto xl:max-w-[90%]">
         <div className="mb-12 text-center">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.25em] text-darkBlue">
-            What We Do
-          </p>
 
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
             We Help You Interview Better
           </h2>
+                    <motion.div
+                      initial={{ scaleX: 0, opacity: 0 }}
+                      whileInView={{ scaleX: 1, opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.65,
+                        delay: 0.2,
+                        ease: "easeOut",
+                      }}
+                      className="mx-auto mt-5 flex w-72 origin-center items-center justify-center"
+                    >
+                      <span className="h-[2px] flex-1 bg-darkBlue" />
+                      <span className="mx-3 h-3 w-3 rounded-full bg-blue" />
+                      <span className="mx-3 h-3 w-3 rounded-full bg-blue" />
+                      <span className="h-[2px] flex-1 bg-darkBlue" />
+                    </motion.div>
+          
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
@@ -116,16 +130,19 @@ const WhatWeDo = () => {
             })}
           </div>
 
-          <div className="relative min-h-[430px]">
+          <div className="relative min-h-[430px] ">
             <AnimatePresence mode="wait">
-              <motion.div
-                key={active.title}
-                initial={{ x: 40, opacity: 0, scale: 0.94 }}
-                animate={{ x: 0, opacity: 1, scale: 1 }}
-                exit={{ x: 30, opacity: 0, scale: 0.94 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-                className="relative h-[430px] overflow-hidden rounded-[36px] bg-darkBlue p-8 text-white shadow-2xl"
-              >
+<motion.div
+  key={active.title}
+  initial={{ x: 40, opacity: 0, scale: 0.94 }}
+  animate={{ x: 0, opacity: 1, scale: 1 }}
+  exit={{ x: 30, opacity: 0, scale: 0.94 }}
+  transition={{ duration: 0.35, ease: "easeOut" }}
+  className="relative h-[430px] overflow-hidden rounded-[36px] bg-lightBlue p-8 text-white shadow-2xl bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/cardbg.png')",
+  }}
+>
                 <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,rgba(255,255,255,0.22)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.22)_1px,transparent_1px)] [background-size:32px_32px]" />
 
                 <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-blue opacity-40 blur-2xl" />
