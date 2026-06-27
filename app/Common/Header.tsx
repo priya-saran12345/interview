@@ -25,9 +25,9 @@ const Header = () => {
         duration: 0.7,
         ease: "easeOut",
       }}
-      className="sticky top-0 z-50 w-full border-b border-lightBlue  shadow-sm backdrop-blur-md"
+      className="sticky top-0 z-50 w-full border-b border-lightBlue bg-white/80 shadow-sm backdrop-blur-md"
     >
-      <div className="mx-auto flex h-[76px] xl:max-w-[90%] items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-[76px] items-center justify-between px-4 sm:px-6 lg:px-8 xl:max-w-[90%]">
         <Link
           href="/"
           className="relative text-2xl font-extrabold tracking-tight text-darkBlue no-underline sm:text-3xl"
@@ -48,17 +48,16 @@ const Header = () => {
                 ease: "easeOut",
               }}
             >
-<Tooltip
-  title={
-    item.label === "About"
-      ? "About is waiting for you"
-      : `Let's explore ${item.label}`
-  }
-  placement="bottom"
-  color="var(--darkBlue)"
-  // text="var(--darkBlue)"
->    
-            <Link
+              <Tooltip
+                title={
+                  item.label === "About"
+                    ? "About is waiting for you"
+                    : `Let's explore ${item.label}`
+                }
+                placement="bottom"
+                color="var(--darkBlue)"
+              >
+                <Link
                   href={item.href}
                   className="group relative overflow-hidden py-2 text-[15px] font-semibold text-gray-700 no-underline transition hover:text-darkBlue"
                 >
@@ -79,15 +78,26 @@ const Header = () => {
             delay: 0.6,
             ease: "easeOut",
           }}
-          className="hidden md:block"
+          className="hidden items-center gap-3 md:flex"
         >
-          <Button
-            type="primary"
-            size="large"
-            className="!rounded-full !bg-darkBlue !px-7 !font-semibold hover:!bg-blue"
-          >
-            Get Started
-          </Button>
+          <Link href="/login">
+            <Button
+              size="large"
+              className="!rounded-full !border-darkBlue !px-6 !font-semibold !text-darkBlue hover:!border-blue hover:!text-blue"
+            >
+              Login
+            </Button>
+          </Link>
+
+          <Link href="/signup">
+            <Button
+              type="primary"
+              size="large"
+              className="!rounded-full !bg-darkBlue !px-7 !font-semibold hover:!bg-blue"
+            >
+              Sign Up
+            </Button>
+          </Link>
         </motion.div>
 
         <Button
@@ -157,14 +167,28 @@ const Header = () => {
             </motion.div>
           ))}
 
-          <Button
-            type="primary"
-            size="large"
-            block
-            className="!mt-3 !rounded-full !bg-darkBlue !font-semibold hover:!bg-blue"
-          >
-            Get Started
-          </Button>
+          <div className="mt-4 flex flex-col gap-3">
+            <Link href="/login" onClick={() => setOpen(false)}>
+              <Button
+                block
+                size="large"
+                className="!rounded-full !border-darkBlue !font-semibold !text-darkBlue hover:!border-blue hover:!text-blue"
+              >
+                Login
+              </Button>
+            </Link>
+
+            <Link href="/signup" onClick={() => setOpen(false)}>
+              <Button
+                type="primary"
+                block
+                size="large"
+                className="!rounded-full !bg-darkBlue !font-semibold hover:!bg-blue"
+              >
+                Sign Up
+              </Button>
+            </Link>
+          </div>
         </motion.div>
       </Drawer>
     </motion.header>
