@@ -4,6 +4,7 @@ import ProcessSteps from "./HomeComponent/ProcessSteps";
 import WhatWeDo from "./HomeComponent/WhatWeDo";
 import Header from "./Common/Header";
 import Footer from "./Common/Footer";
+import ContactUsPage from "./HomeComponent/Contact";
 export default function Home() {
   return (
 <div>
@@ -12,6 +13,7 @@ export default function Home() {
   <Banner></Banner>
   <ProcessSteps/>
   <WhatWeDo/>
+  <ContactUsPage/>
       <Footer/>
 </div>  );
 }

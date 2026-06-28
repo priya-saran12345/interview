@@ -29,7 +29,8 @@ export default function Banner() {
 
   return (
     <main className="min-h-[85vh] bg-lightGrey">
-      <section className="mx-auto grid min-h-[85vh] xl:max-w-[90%] grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
+      <section className="mx-auto grid min-h-[85vh] xl:max-w-[90%]
+       grid-cols-1 items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:px-8">
         <motion.div
           initial={{ y: 45, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
