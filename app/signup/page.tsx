@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 interface SignupForm {
   full_name: string;
@@ -71,11 +72,8 @@ export default function SignupPage() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setErrorMessage("");
-
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -84,35 +82,37 @@ export default function SignupPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setErrorMessage("");
 
     try {
       setLoading(true);
 
-      const response = await fetch("http://localhost:5000/api/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          passing_year: formData.passing_year
-            ? Number(formData.passing_year)
-            : null,
-        }),
-      });
+      const response = await fetch(
+        "https://interview-backend-s66r.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            ...formData,
+            passing_year: formData.passing_year
+              ? Number(formData.passing_year)
+              : null,
+          }),
+        }
+      );
 
       const data = await response.json();
 
       if (response.ok) {
-        alert("Signup successful");
+        toast.success("Signup successful");
         router.push("/login");
       } else {
-        setErrorMessage(data?.message || "Signup failed. Please try again.");
+        toast.error(data?.message || "Signup failed. Please try again.");
       }
     } catch (error) {
       console.log(error);
-      setErrorMessage("Something went wrong. Please try again.");
+      toast.error("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -202,12 +202,6 @@ export default function SignupPage() {
                   Enter your student details to continue.
                 </p>
               </div>
-
-              {errorMessage && (
-                <div className="mb-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-600">
-                  {errorMessage}
-                </div>
-              )}
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field
