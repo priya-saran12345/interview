@@ -88,7 +88,8 @@ console.log('the api url is ',API_URL)
       setLoading(true);
 
       const response = await fetch(
-        `${API_URL}auth/signup`,
+        // `${API_URL}auth/signup`,
+        `https://interview-backend-s66r.onrender.com/api/auth/signup`,
         {
           method: "POST",
           headers: {

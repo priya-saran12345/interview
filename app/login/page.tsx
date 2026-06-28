@@ -39,7 +39,8 @@ export default function LoginPage() {
       setLoading(true);
 
       const response = await fetch(
-                `${API_URL}auth/login`,
+                // `${API_URL}auth/login`,
+                `https://interview-backend-s66r.onrender.com/api/auth/login`,
 
         {
           method: "POST",
