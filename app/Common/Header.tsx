@@ -7,7 +7,7 @@ import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 
 const navItems = [
-  { label: "Home", href: "/" },
+  // { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
