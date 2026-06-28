@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface SignupForm {
   full_name: string;
@@ -59,7 +60,7 @@ function Field({
 
 export default function SignupPage() {
   const router = useRouter();
-
+console.log('the api url is ',API_URL)
   const [formData, setFormData] = useState<SignupForm>({
     full_name: "",
     email: "",
@@ -87,7 +88,7 @@ export default function SignupPage() {
       setLoading(true);
 
       const response = await fetch(
-        "https://interview-backend-s66r.onrender.com/api/auth/signup",
+        `${API_URL}auth/signup`,
         {
           method: "POST",
           headers: {

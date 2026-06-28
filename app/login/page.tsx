@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 interface LoginForm {
   email: string;
@@ -38,8 +39,7 @@ export default function LoginPage() {
       setLoading(true);
 
       const response = await fetch(
-        // "http://localhost:5000/api/auth/login",
-                "https://interview-backend-s66r.onrender.com/api/auth/login",
+                `${API_URL}auth/login`,
 
         {
           method: "POST",
